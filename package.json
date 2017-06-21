@@ -17,14 +17,14 @@
     "fiuba"
   ],
   "dependencies": {
-    "body-parser": "^1.15.2",
+    "body-parser": "^1.17.2",
     "errorhandler": "^1.4.3",
-    "express": "^4.14.0",
+    "express": "^4.15.3",
     "express-session": "^1.14.1",
     "method-override": "^2.3.6",
     "morgan": "^1.7.0",
     "multer": "^1.2.0",
-    "pg": "4.x",
+    "pg": "^4.5.6",
     "serve-favicon": "^2.3.0",
     "toobusy-js": "^0.5.1"
   },

@@ -32,14 +32,9 @@ app.use(bodyParser.json());    // parse application/json
 
 
 app.get('/', function(req, res) { 
-    res.sendFile('index.html');                
+    //res.sendFile('index.html');
+    res.send("Response");
 });
-
-app.use('/categories', categories);
-
-app.use('/skills', skills);
-
-app.use('/job_positions', job_positions);
 
 
 app.use(function(req, res, next){
