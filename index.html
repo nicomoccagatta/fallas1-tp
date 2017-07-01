@@ -20,7 +20,7 @@
   <div class="row">
     <div class="col-sm-4">
     	<h3>Mano</h3>
-    	<input type="radio" name="juego" value="1"> Carta Alta <br>
+    	<input type="radio" name="juego" value="1" checked> Carta Alta <br>
     	<input type="radio" name="juego" value="2"> Par <br>
     	<input type="radio" name="juego" value="3"> Par Doble <br>
     	<input type="radio" name="juego" value="4"> Trío <br>
@@ -33,7 +33,7 @@
     </div>
     <div class="col-sm-4">
       <h3>Jugadores</h3>
-    	<input type="radio" name="jugadores" value="1"> Un jugador <br>
+    	<input type="radio" name="jugadores" value="1" checked> Un jugador <br>
     	<input type="radio" name="jugadores" value="2"> Dos jugadores <br>
     	<input type="radio" name="jugadores" value="3"> Tres jugadores <br>
     	<input type="radio" name="jugadores" value="4"> Cuatro jugadores <br>
@@ -53,7 +53,15 @@
 <h5 style="padding-left:2em">Moccagatta, Nicolás</h5>
 
 <script type="text/javascript">
-	
+	$("input[name=juego]").change(function() {
+		console.log("Juego: " + $("input[name=juego]:checked").val());
+		console.log("Jugadores: " + $("input[name=jugadores]:checked").val());
+	});
+
+	$("input[name=jugadores]").change(function() {
+		console.log("Juego: " + $("input[name=juego]:checked").val());
+		console.log("Jugadores: " + $("input[name=jugadores]:checked").val());
+	});
 </script>
 
 </body>
