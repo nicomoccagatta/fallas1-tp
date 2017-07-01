@@ -43,7 +43,7 @@
     <div class="col-sm-4">
       <h3>Decisión</h3>        
       <p>La decisión que debería tomarse es..</p>
-      <h2 id="decision"></p>
+      <h2 id="decision" style="text-align: center"></p>
     </div>
   </div>
 </div>
@@ -69,18 +69,23 @@
 		switch(matrixValues[$("input[name=juego]:checked").val()-1][$("input[name=jugadores]:checked").val()-1]) {
 			case 1:
 				$("h2#decision").text("Fold");
+				$("h2#decision").css("background-color","#FF0000");
 				break;
 			case 2:
 				$("h2#decision").text("Fold / Call");
+				$("h2#decision").css("background-color","#FF8000");
 				break;
 			case 3:
 				$("h2#decision").text("Call");
+				$("h2#decision").css("background-color","#FFFF00");
 				break;
 			case 4:
 				$("h2#decision").text("Call / Raise");
+				$("h2#decision").css("background-color","#AAFF00");
 				break;
 			case 5:
 				$("h2#decision").text("Raise");
+				$("h2#decision").css("background-color","#00FF00");
 				break;
 		}
 	};
