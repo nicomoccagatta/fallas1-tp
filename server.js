@@ -42,10 +42,8 @@ app.use(bodyParser.json());    // parse application/json
 
 
 app.get('/', function(req, res) { 
-    //res.sendFile('index.html');
-    res.send("Response");
+    res.sendFile(__dirname + '/index.html');                
 });
-
 
 app.use(function(req, res, next){
   res.status(404);
