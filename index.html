@@ -43,7 +43,7 @@
     <div class="col-sm-4">
       <h3>Decisión</h3>        
       <p>La decisión que debería tomarse es..</p>
-      <p>Raise</p>
+      <h2 id="decision"></p>
     </div>
   </div>
 </div>
@@ -68,19 +68,19 @@
 	function refreshDecision() {
 		switch(matrixValues[$("input[name=juego]:checked").val()-1][$("input[name=jugadores]:checked").val()-1]) {
 			case 1:
-				console.log(1);
+				$("h2#decision").text("Fold");
 				break;
 			case 2:
-				console.log(2);
+				$("h2#decision").text("Fold / Call");
 				break;
 			case 3:
-				console.log(3);
+				$("h2#decision").text("Call");
 				break;
 			case 4:
-				console.log(4);
+				$("h2#decision").text("Call / Raise");
 				break;
 			case 5:
-				console.log(5);
+				$("h2#decision").text("Raise");
 				break;
 		}
 	};
