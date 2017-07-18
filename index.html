@@ -57,7 +57,7 @@
 		var mano = $("input[name=juego]:checked").val();
 		var jugadores = $("input[name=jugadores]:checked").val();
 
-		$.get('http://localhost:8080/motor_inferencia/decision', { mano: mano, jugadores: jugadores }, function(response) {
+		$.get('http://fallas-tp.herokuapp.com/motor_inferencia/decision', { mano: mano, jugadores: jugadores }, function(response) {
 			switch(parseInt(response)) {
 				case 1:
 					$("h2#decision").text("Fold");
