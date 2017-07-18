@@ -53,41 +53,37 @@
 <h5 style="padding-left:2em">Moccagatta, Nicolás</h5>
 
 <script type="text/javascript">
-	var matrixValues = [
-		[2, 1, 1, 1, 1, 1],
-		[2, 2, 1, 1, 1, 1],
-		[3, 2, 2, 2, 1, 1],
-		[4, 2, 2, 2, 1, 1],
-		[4, 3, 3, 2, 2, 2],
-		[5, 4, 4, 3, 2, 2],
-		[5, 5, 4, 4, 3, 3],
-		[5, 5, 5, 4, 4, 4],
-		[5, 5, 5, 5, 5, 4]
-	];
-
 	function refreshDecision() {
-		switch(matrixValues[$("input[name=juego]:checked").val()-1][$("input[name=jugadores]:checked").val()-1]) {
-			case 1:
-				$("h2#decision").text("Fold");
-				$("h2#decision").css("background-color","#FF0000");
-				break;
-			case 2:
-				$("h2#decision").text("Fold / Call");
-				$("h2#decision").css("background-color","#FF8000");
-				break;
-			case 3:
-				$("h2#decision").text("Call");
-				$("h2#decision").css("background-color","#FFFF00");
-				break;
-			case 4:
-				$("h2#decision").text("Call / Raise");
-				$("h2#decision").css("background-color","#AAFF00");
-				break;
-			case 5:
-				$("h2#decision").text("Raise");
-				$("h2#decision").css("background-color","#00FF00");
-				break;
-		}
+		var mano = $("input[name=juego]:checked").val();
+		var jugadores = $("input[name=jugadores]:checked").val();
+
+		$.get('http://localhost:8080/motor_inferencia/decision?', { mano: mano, jugadores: jugadores }, function(response) {
+			switch(parseInt(response)) {
+				case 1:
+					$("h2#decision").text("Fold");
+					$("h2#decision").css("background-color","#FF0000");
+					break;
+				case 2:
+					$("h2#decision").text("Fold / Call");
+					$("h2#decision").css("background-color","#FF8000");
+					break;
+				case 3:
+					$("h2#decision").text("Call");
+					$("h2#decision").css("background-color","#FFFF00");
+					break;
+				case 4:
+					$("h2#decision").text("Call / Raise");
+					$("h2#decision").css("background-color","#AAFF00");
+					break;
+				case 5:
+					$("h2#decision").text("Raise");
+					$("h2#decision").css("background-color","#00FF00");
+					break;
+				default:
+					alert('Error en la respuesta de motor de inferencia, rta: '+response);
+					break;
+			}
+		});
 	};
 
 	$("input[name=juego]").change(function() {
