@@ -6,11 +6,6 @@ const pg = require('pg');
 var bodyParser = require('body-parser');
 var toobusy = require('toobusy-js');
 
-//var categories = require("./js/categories");
-//var skills = require("./js/skills");
-//var job_positions = require("./js/job_positions");
-
-
 // Constants
 const PORT = 8080;
 
@@ -28,12 +23,6 @@ app.use(function(req, res, next) {
     next();
   }
 });
-
-
-//app.use('/categories', categories);
-//app.use('/skills', skills);
-//app.use('/job_positions', job_positions);
-
 
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true

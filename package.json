@@ -24,6 +24,7 @@
     "method-override": "^2.3.6",
     "morgan": "^1.7.0",
     "multer": "^1.2.0",
+    "node-rules": "^3.1.0",
     "pg": "^4.5.6",
     "serve-favicon": "^2.3.0",
     "toobusy-js": "^0.5.1"
